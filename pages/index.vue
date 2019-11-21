@@ -2,9 +2,8 @@
   <div class="container">
     <div>
       <logo />
-      <h1 class="title">
-        nuxt-type
-      </h1>
+      <input type="button" @click="test"/>
+      <h1 class="title">{{title}}</h1>
       <h2 class="subtitle">
         My bee&#39;s knees Nuxt.js project
       </h2>
@@ -35,7 +34,12 @@ import { Component, Vue } from 'vue-property-decorator'
     Logo: () => import('~/components/Logo.vue')
   }
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  title: string = 'This is a message'
+  test () : void {
+    alert('test')
+  }
+}
 </script>
 
 <style>
