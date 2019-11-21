@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-type",
+  "version": "1.0.0",
+  "description": "My bee&#39;s knees Nuxt.js project",
+  "author": "ttatsato",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.3.4",
+    "vue-property-decorator": "^8.3.0"
+  }
+}
