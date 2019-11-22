@@ -38,7 +38,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    'nuxt-buefy'
   ],
   /*
   ** Build configuration

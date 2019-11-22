@@ -3,7 +3,12 @@
     <nuxt />
   </div>
 </template>
+<script lang="ts">
+  import {Component, Vue} from "vue-property-decorator"
+  export default class DefaultLayout extends Vue{
 
+  }
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -15,6 +20,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 *,
