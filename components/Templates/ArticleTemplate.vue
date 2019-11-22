@@ -7,7 +7,7 @@
           <div class="a-main__content">
             <div class="a-content-header">
               <div class="a-info">
-                <div class="a-info__author">俺だよ俺</div>
+                <div class="a-info__author">{{authorName}}</div>
                 <div class="a-info__time">2019年04月22日に更新</div>
                 </div>
               <h1 class="a-content-header__title">{{title}}</h1>
@@ -37,6 +37,8 @@
       title!: string;
       @Prop({ default: '' })
       contents!: string;
+      @Prop({ default: '' })
+      authorName!: string;
     }
 </script>
 

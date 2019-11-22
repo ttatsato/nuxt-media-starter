@@ -1,5 +1,5 @@
 <template>
-  <b-navbar fixed-top="true">
+  <b-navbar :fixed-top="true">
     <template slot="brand">
       <b-navbar-item
         tag="router-link"
