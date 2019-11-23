@@ -24,20 +24,13 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from "vue-property-decorator";
+  import {Component, Prop, Vue} from "nuxt-property-decorator";
     @Component({
       components: {
         GlobalHeader: () => import('~/components/organism/GlobalHeader.vue')
       }
     })
-    export default class ArticleTemplate extends Vue{
-      @Prop({ default: '' })
-      title!: string;
-      @Prop({ default: '' })
-      contents!: string;
-      @Prop({ default: '' })
-      authorName!: string;
-    }
+    export default class ArticleTemplate extends Vue{}
 </script>
 
 <style lang="sass" scoped>

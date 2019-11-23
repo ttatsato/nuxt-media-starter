@@ -1,16 +1,11 @@
 <template>
-  <ArticleTemplate
-    :title="title"
-    :contents="body"
-    :authorName="authorName"
-    :updatedAt="updatedAt"
-  >
+  <ArticleTemplate>
     <div slot="mainContent">
       <div class="a-main__content">
         <div class="a-content-header">
           <div class="a-info">
             <div class="a-info__author">{{authorName}}</div>
-            <div class="a-info__time">2019年04月22日に更新</div>
+            <div class="a-info__time">{{updatedAt}} 更新</div>
           </div>
           <h1 class="a-content-header__title">{{title}}</h1>
         </div>
@@ -26,9 +21,8 @@
 
 <script lang="ts">
   import {Component, Vue} from "nuxt-property-decorator";
-  import { Context } from '@nuxt/types'
   import {createClient} from '~/plugins/contentful.js'
-
+  import marked from "marked"
   const client = createClient()
   @Component({
     components: {
@@ -37,14 +31,13 @@
   })
   export default class Article extends Vue {
 
-    async asyncData({params}): object {
+    async asyncData({params, env} : {params: any, env: any}) :Promise<Object> {
       const data = await client.getEntry({
         id: params.id
       })
-
       return {
         title: data.fields.title,
-        body: data.fields.body,
+        body: marked(data.fields.body),
         updatedAt: data.sys.updatedAt,
         authorName: data.fields.author.fields.name
       }

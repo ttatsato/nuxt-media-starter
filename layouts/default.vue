@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import {Vue} from "vue-property-decorator"
+  import {Vue} from "nuxt-property-decorator"
   export default class DefaultLayout extends Vue{
   }
 </script>
