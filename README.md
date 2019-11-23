@@ -74,12 +74,13 @@ contentful space accesstoken create --name nuxt-tutorial
 cp .contentful.default.json .contentful.json 
 ```
 作成した.contentful.json にトークン情報を書き込む
+CTF_SPACE_IDとCTF_CDA_ACCESS_TOKENを追記する
 ```json
 {
-  "CTF_PERSON_ID": "15jwOBqpxqSAOy2eOO4S0m", //変えなくていい
-  "CTF_BLOG_POST_TYPE_ID": "blogPost", // 変えなくていい
-  "CTF_SPACE_ID": "", // 記入して
-  "CTF_CDA_ACCESS_TOKEN": "" // 記入して
+  "CTF_PERSON_ID": "15jwOBqpxqSAOy2eOO4S0m",
+  "CTF_BLOG_POST_TYPE_ID": "blogPost",
+  "CTF_SPACE_ID": "",
+  "CTF_CDA_ACCESS_TOKEN": ""
 }
 ```
 
