@@ -1,4 +1,14 @@
-const config = require('./.contentful.json')
+let contentFulConfig = {}
+if (process.env.NODE_ENV === 'development') {
+  contentFulConfig = require('./.contentful.json')
+} else {
+  contentFulConfig = {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: process.env.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID
+  }
+}
 export default {
   mode: 'universal',
   /*
@@ -46,10 +56,10 @@ export default {
   */
   build: {},
   env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+    CTF_SPACE_ID: contentFulConfig.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: contentFulConfig.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: contentFulConfig.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: contentFulConfig.CTF_BLOG_POST_TYPE_ID
   },
   vue: {
     config: {

@@ -8,7 +8,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "contentful": "^7.10.0",
@@ -17,9 +18,10 @@
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.4",
+    "@types/marked": "^0.7.2",
     "marked": "^0.7.0",
     "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
-    "nuxt-property-decorator": "^2.5.0"
+    "nuxt-property-decorator": "^2.5.0",
+    "sass-loader": "^8.0.0"
   }
 }
