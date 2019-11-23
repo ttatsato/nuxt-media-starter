@@ -33,7 +33,7 @@ https://www.contentful.com/developers/docs/javascript/tutorials/integrate-conten
 
 ## contetfulコマンドを使えるようにする
 ```
-npm install contentful
+npm install -g contentful-cli
 ```
 
 ## contentfulのspaceを作る
