@@ -10,11 +10,9 @@
         </div>
         <div class="a-sub">
           <div class="a-sub__content--1">
-            a-sub__content--1
             <slot name="subContent1"></slot>
           </div>
           <div class="a-sub__content--2">
-            a-sub__content--2
             <slot name="subContent2"></slot>
           </div>
         </div>
@@ -47,7 +45,8 @@
   .container
     padding-top: 24px
     padding-bottom: 40px
-
+    @media screen and (max-width: 768px)
+      padding-top: 0
   .a-container
     min-height: 100vh
     display: grid
@@ -61,11 +60,13 @@
     padding: 16px
     @media screen and (max-width: 1000px)
       grid-column: 1 / 3
+    @media screen and (max-width: 768px)
+      padding: 0
   .a-main__content
     background-color: #ffffff
     padding: 32px
     @media screen and (max-width: 768px)
-      padding: 0
+      padding: 16px 16px 32px
 
   .a-sub
     padding-top: 16px
@@ -130,15 +131,15 @@
 
   .a-main__content-body /deep/ p
     line-height: 1.9
-
-
-  .a-sub__content--1
-    min-height: 250px
-    border: 1px solid #ddd
-    margin-bottom: 1rem
-  .a-sub__content--2
-    border: 1px solid #ddd
-    min-height: 250px
+  .a-main__content-body /deep/ a
+    word-break: break-all
+  /*.a-sub__content--1*/
+    /*min-height: 250px*/
+    /*border: 1px solid #ddd*/
+    /*margin-bottom: 1rem*/
+  /*.a-sub__content--2*/
+    /*border: 1px solid #ddd*/
+    /*min-height: 250px*/
 
   h1,
   h2,

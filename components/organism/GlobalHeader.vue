@@ -17,7 +17,7 @@
       <b-navbar-item href="#">
         hoge
       </b-navbar-item>
-      <b-navbar-dropdown label="dropDown">
+      <b-navbar-dropdown label="Portfolio">
         <b-navbar-item
           v-for="portfolioRoute in portfolioRoutes"
           :key="portfolioRoute.path"
@@ -55,4 +55,8 @@
     }
   }
 </script>
+<style lang="sass" scoped>
+  .navbar
+    border-bottom: 1px solid orange
+</style>
 
