@@ -91,7 +91,6 @@
     margin-right: 16px
     font-size: 1.6rem
 
-
   .a-main__content-body /deep/ h1,
   .a-main__content-body /deep/ h2,
   .a-main__content-body /deep/ h3,
@@ -141,4 +140,43 @@
     border: 1px solid #ddd
     min-height: 250px
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    font-weight: 700
+    line-height: 1.5
+    font-feature-settings: "palt"
+    margin-top: 2.2em
+    margin-bottom: 2.4rem
+    cursor: pointer
+    position: relative
+
+  h1
+    font-size: 2em
+    border-bottom: 1px solid #ddd
+    padding-bottom: .1em
+
+  h2
+    font-size: 1.8em
+    border-bottom: 1px solid #ddd
+    padding-bottom: .1em
+
+  h3
+    font-size: 1.6em
+    padding-bottom: .1em
+
+  .code-frame
+    margin: 1.5em -32px
+    padding: 1em 32px
+    font-size: .9em
+
+  ul
+    list-style: disc
+    margin-left: 1rem
+
+  p
+    line-height: 1.9
 </style>
