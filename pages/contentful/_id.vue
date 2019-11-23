@@ -32,9 +32,7 @@
   export default class Article extends Vue {
 
     async asyncData({params, env} : {params: any, env: any}) :Promise<Object> {
-      const data = await client.getEntry({
-        id: params.id
-      })
+      const data = await client.getEntry(params.id)
       return {
         title: data.fields.title,
         body: marked(data.fields.body),
