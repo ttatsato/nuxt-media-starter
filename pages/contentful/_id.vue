@@ -21,24 +21,15 @@
 
 <script lang="ts">
   import {Component, Vue} from "nuxt-property-decorator";
-  import {createClient} from '~/plugins/contentful.js'
-  import marked from "marked"
-  const client = createClient()
+  import {fetchEntryBySlug} from "@/api/contentful";
   @Component({
     components: {
       ArticleTemplate: () => import('~/components/Templates/ArticleTemplate.vue')
     }
   })
   export default class Article extends Vue {
-
     async asyncData({params} : {params: any}) :Promise<Object> {
-      const data = await client.getEntry(params.id)
-      return {
-        title: data.fields.title,
-        body: marked(data.fields.body),
-        updatedAt: data.sys.updatedAt,
-        authorName: data.fields.author.fields.name
-      }
+      return await fetchEntryBySlug(params.id)
     }
   }
 </script>

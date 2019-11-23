@@ -50,8 +50,32 @@ export default {
   */
   modules: [
     '@nuxt/typescript-build',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://messy-ttatsato.herokuapp.com/',
+    // generate: true,
+    async routes () {
+      const contentful = require('contentful');
+      const client = contentful.createClient({
+        space: contentFulConfig.CTF_SPACE_ID,
+        accessToken: contentFulConfig.CTF_CDA_ACCESS_TOKEN
+      });
+      const posts = await client.getEntries({
+        'content_type': contentFulConfig.CTF_BLOG_POST_TYPE_ID,
+        order: '-sys.createdAt'
+      });
+
+      let urls = [];
+      posts.items.forEach((val, idx, arr) => {
+        console.log(val.fields.slug)
+        urls[idx] = val.fields.slug
+      });
+      return urls;
+    }
+  },
   /*
   ** Build configuration
   */
