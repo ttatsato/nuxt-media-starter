@@ -1,12 +1,11 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt/>
   </div>
 </template>
-<script lang="ts">
-  import {Component, Vue} from "vue-property-decorator"
+<script>
+  import {Vue} from "nuxt-property-decorator"
   export default class DefaultLayout extends Vue{
-
   }
 </script>
 <style>
