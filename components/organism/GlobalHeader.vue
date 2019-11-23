@@ -17,13 +17,12 @@
       <b-navbar-item href="#">
         hoge
       </b-navbar-item>
-      <b-navbar-dropdown label="dropDown">
-        <b-navbar-item href="#">
-         hogehoge
-        </b-navbar-item>
-        <b-navbar-item href="#">
-         hogehogehoge
-        </b-navbar-item>
+      <b-navbar-dropdown label="Portfolio">
+        <b-navbar-item
+          v-for="portfolioRoute in portfolioRoutes"
+          :key="portfolioRoute.path"
+          @click="$router.push(portfolioRoute.path)"
+        >{{portfolioRoute.name}}</b-navbar-item>
       </b-navbar-dropdown>
     </template>
     <template slot="end">
@@ -39,10 +38,25 @@
   </b-navbar>
 </template>
 <script lang="ts">
-  import {Vue} from "nuxt-property-decorator";
+  import {Component, Vue} from "nuxt-property-decorator";
 
+  @Component
   export default class GlobalHeader extends Vue {
 
+    portfolioRoutes: Array<object> = []
+
+    mounted () {
+      // @ts-ignore
+      this.$router.options.routes.forEach(route => {
+        if (route.path.indexOf('/portfolio') >= 0 ) {
+          this.portfolioRoutes.push(route)
+        }
+      })
+    }
   }
 </script>
+<style lang="sass" scoped>
+  .navbar
+    border-bottom: 1px solid orange
+</style>
 

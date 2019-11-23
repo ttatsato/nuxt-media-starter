@@ -43,6 +43,7 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="sass" scoped>
+  .a-content-header__title
+    margin-top: 0
 </style>
