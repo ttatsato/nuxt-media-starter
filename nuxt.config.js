@@ -60,7 +60,8 @@ export default {
     CTF_SPACE_ID: contentFulConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: contentFulConfig.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: contentFulConfig.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: contentFulConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_BLOG_POST_TYPE_ID: contentFulConfig.CTF_BLOG_POST_TYPE_ID,
+    GOOGLE_ANALYTICS_TRACKING_ID: process.env.GOOGLE_ANALYTICS_TRACKING_ID
   },
   vue: {
     config: {
