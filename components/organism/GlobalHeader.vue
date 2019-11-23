@@ -14,9 +14,6 @@
       <b-navbar-item :href="'/'">
         Home
       </b-navbar-item>
-      <b-navbar-item href="#">
-        hoge
-      </b-navbar-item>
       <b-navbar-dropdown label="Portfolio">
         <b-navbar-item
           v-for="portfolioRoute in portfolioRoutes"
@@ -25,16 +22,16 @@
         >{{portfolioRoute.name}}</b-navbar-item>
       </b-navbar-dropdown>
     </template>
-    <template slot="end">
-      <b-navbar-item tag="div">
-        <div class="buttons">
-          <a class="button is-primary">
-            <strong>fuga</strong>
-          </a>
-          <a class="button is-light">foo</a>
-        </div>
-      </b-navbar-item>
-    </template>
+    <!--<template slot="end">-->
+      <!--<b-navbar-item tag="div">-->
+        <!--<div class="buttons">-->
+          <!--<a class="button is-primary">-->
+            <!--<strong>fuga</strong>-->
+          <!--</a>-->
+          <!--<a class="button is-light">foo</a>-->
+        <!--</div>-->
+      <!--</b-navbar-item>-->
+    <!--</template>-->
   </b-navbar>
 </template>
 <script lang="ts">

@@ -2,6 +2,11 @@
   <ArticleTemplate>
     <template slot="mainContent">
       <h1>canvasを扱う</h1>
+      サンプルを表示するには、描画を押してね
+      <a
+        @click="init()"
+        class="button is-primary"
+        >描画</a>
       <div>
         <h2>canvas ~短形~</h2>
         <ul>
@@ -114,7 +119,7 @@
     g: Array<number>  = [];
     b: Array<number> = [];
 
-    public async mounted() {
+    init () {
       let canvas = <HTMLCanvasElement> window.document.getElementById('square')
       if (!canvas) return
       this.ctx = canvas.getContext('2d')
@@ -155,7 +160,6 @@
         this.b[i] = Math.floor(Math.random() * 64)
       }
       setInterval(this.anime2, 33)
-      // this.anime2()
     }
 
     anime1() {
