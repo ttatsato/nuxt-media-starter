@@ -5,21 +5,19 @@
       <div class="a-container">
         <div class="a-main">
           <div class="a-main__content">
-            <div class="a-content-header">
-              <div class="a-info">
-                <div class="a-info__author">{{authorName}}</div>
-                <div class="a-info__time">2019年04月22日に更新</div>
-                </div>
-              <h1 class="a-content-header__title">{{title}}</h1>
-            </div>
-            <div
-              class="a-main__content-body"
-              v-html="contents"
-            >
-            </div>
+            <slot name="mainContent"></slot>
           </div>
         </div>
-        <div class="a-sub-content"></div>
+        <div class="a-sub">
+          <div class="a-sub__content--1">
+            a-sub__content--1
+            <slot name="subContent1"></slot>
+          </div>
+          <div class="a-sub__content--2">
+            a-sub__content--2
+            <slot name="subContent2"></slot>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -66,18 +64,19 @@
       width: auto
       display: initial
   .a-main
-    background-color: #ffffff
     grid-column: 2 / 3
     padding: 16px
     @media screen and (max-width: 1000px)
       grid-column: 1 / 3
   .a-main__content
+    background-color: #ffffff
     padding: 32px
     @media screen and (max-width: 768px)
       padding: 0
 
-  .a-sub-content
-    grid-column: 1 / 3
+  .a-sub
+    padding-top: 16px
+    grid-column: 3 / 3
 
   .a-content-header
     margin-bottom: 40px
@@ -139,4 +138,14 @@
 
   .a-main__content-body /deep/ p
     line-height: 1.9
+
+
+  .a-sub__content--1
+    min-height: 250px
+    border: 1px solid #ddd
+    margin-bottom: 1rem
+  .a-sub__content--2
+    border: 1px solid #ddd
+    min-height: 250px
+
 </style>
