@@ -12,6 +12,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^2.0.1",
     "contentful": "^7.10.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.19"
