@@ -4,6 +4,8 @@ export default ({ app }) => {
   /*
   ** クライアントサイドかつプロダクションモードでのみ実行
   */
+
+  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV !== 'production') return
   /*
   ** Google アナリティクスのスクリプトをインクルード
@@ -15,6 +17,7 @@ export default ({ app }) => {
   /*
   ** 現在のページをセット
   */
+  console.log(process.env.GOOGLE_ANALYTICS_TRACKING_ID)
   ga('create', process.env.GOOGLE_ANALYTICS_TRACKING_ID, 'auto')
   /*
   ** ルートが変更されるたびに毎回実行（初期化も実行される）
