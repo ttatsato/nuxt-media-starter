@@ -2,16 +2,12 @@
   <div>
     <ArticleTemplate>
       <div slot="mainContent">
-        <div
+        <ListTile
           v-for="post in posts"
-          class="tile is-parent">
-          <article
-            @click="$router.push('/contentful/' + post.fields.slug)"
-            class="tile is-child box">
-            <p class="title">{{post.fields.title}}</p>
-            <p class="subtitle">{{post.fields.description}}</p>
-          </article>
-        </div>
+          :title="post.fields.title"
+          :description="post.fields.description"
+          :path="'/contentful/' + post.fields.slug"
+        ></ListTile>
       </div>
     </ArticleTemplate>
   </div>
@@ -21,11 +17,9 @@
   import {createClient} from '~/plugins/contentful.js'
   import ArticleTemplate from "../components/Templates/ArticleTemplate";
   import {fetchEntries} from "@/api/contentful";
-
-  const client = createClient()
-
+  import ListTile from "../components/molecules/ListTile";
   export default {
-    components: {ArticleTemplate},
+    components: {ListTile, ArticleTemplate},
     // `env` is available in the context object
     async asyncData () {
       const posts = await fetchEntries()
@@ -36,8 +30,4 @@
   }
 </script>
 <style lang="sass" scoped>
-  .tile.is-parent
-    cursor: pointer
-    &:hover
-      opacity: 0.7
 </style>

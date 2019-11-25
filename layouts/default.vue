@@ -23,7 +23,7 @@ html {
 
 @media screen and (max-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
