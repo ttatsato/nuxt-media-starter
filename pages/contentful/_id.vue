@@ -5,14 +5,12 @@
         <div class="a-content-header">
           <div class="a-info">
             <div class="a-info__author">{{authorName}}</div>
-            <div class="a-info__time">{{updatedAt}} 更新</div>
+            <div class="a-info__time"><time>{{updatedAt}}</time> 更新</div>
           </div>
           <h1 class="a-content-header__title">{{title}}</h1>
         </div>
-        <div
-          class="a-main__content-body"
-          v-html="body"
-        >
+        <div class="a-main__content-body">
+          <MarkdownText :content="body"/>
         </div>
       </div>
     </div>
@@ -22,8 +20,10 @@
 <script lang="ts">
   import {Component, Vue} from "nuxt-property-decorator";
   import {fetchEntryBySlug} from "@/api/contentful";
+  import MarkdownText from "../../components/Atoms/MarkdownText";
   @Component({
     components: {
+      MarkdownText,
       ArticleTemplate: () => import('~/components/Templates/ArticleTemplate.vue')
     }
   })
@@ -35,6 +35,25 @@
 </script>
 
 <style lang="sass" scoped>
+  .a-content-header
+    margin-bottom: 40px
   .a-content-header__title
     margin-top: 0
+    font-size: 2.5rem
+    font-weight: 700
+    margin-bottom: 16px
+    font-feature-settings: "palt"
+    line-height: 1
+    border: none
+
+  .a-info
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+
+  .a-info__author
+    margin-right: 16px
+    font-size: 1.6rem
 </style>
