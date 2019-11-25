@@ -20,10 +20,9 @@
 <script lang="ts">
   import {Component, Vue} from "nuxt-property-decorator";
   import {fetchEntryBySlug} from "@/api/contentful";
-  import MarkdownText from "../../components/Atoms/MarkdownText";
   @Component({
     components: {
-      MarkdownText,
+      MarkdownText: () => import('~/components/Atoms/MarkdownText.vue'),
       ArticleTemplate: () => import('~/components/Templates/ArticleTemplate.vue')
     }
   })

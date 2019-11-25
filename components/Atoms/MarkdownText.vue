@@ -9,7 +9,6 @@
 
     @Component
     export default class MarkdownText extends Vue {
-        name: "MarkdownText"
         @Prop({default: ''})
         content!: string
     }

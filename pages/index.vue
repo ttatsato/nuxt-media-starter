@@ -4,6 +4,7 @@
       <div slot="mainContent">
         <ListTile
           v-for="post in posts"
+          :key="post.sys.id"
           :title="post.fields.title"
           :description="post.fields.description"
           :path="'/contentful/' + post.fields.slug"
