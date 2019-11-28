@@ -91,5 +91,8 @@ export default {
     config: {
       ignoredElements :['nuxt']
     }
-  }
+  },
+  serverMiddleware: [
+    '~/server'
+  ]
 }
