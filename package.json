@@ -18,7 +18,7 @@
   "devDependencies": {
     "@nuxt/typescript-build": "^0.3.4",
     "@types/marked": "^0.7.2",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "node-sass": "^4.14.1",
     "nuxt-property-decorator": "^2.5.0",
     "sass-loader": "^8.0.0"
